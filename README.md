@@ -68,7 +68,7 @@ Le fichier docker-compose.yml est déjà fourni dans ce dépôt.
 
 ```bash
 
-git clone https://github.com/yosr-ezzeddine/Smart-Parking-Digital-Twin.git
+git clone https://github.com/yosr-ezzeddine/Smart-Parking-Digital-Twin-.git
 cd <nom-du-repo>
 ```
 
