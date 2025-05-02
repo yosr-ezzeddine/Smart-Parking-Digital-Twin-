@@ -1,0 +1,39 @@
+version: '3'
+
+services:
+  # FIWARE Orion Context Broker
+  orion:
+    image: fiware/orion:latest
+    container_name: orion
+    ports:
+      - "1026:1026"
+    environment:
+      - TZ=Europe/Berlin
+      - FIWARE_HTTP_PORT=1026
+      - MONGODB_URL=mongodb://mongo:27017
+    depends_on:
+      - mongo
+    networks:
+      - fiware_network
+  
+  # MongoDB (Used by Orion)
+  mongo:
+    image: mongo:latest
+    container_name: mongo
+    ports:
+      - "27017:27017"
+    networks:
+      - fiware_network
+
+  # Apache NiFi
+  nifi:
+    image: apache/nifi:latest
+    container_name: nifi
+    ports:
+      - "8080:8080"
+    networks:
+      - fiware_network
+
+networks:
+  fiware_network:
+    driver: bridge
