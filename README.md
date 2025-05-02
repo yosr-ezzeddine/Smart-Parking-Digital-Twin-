@@ -85,11 +85,11 @@ docker-compose up -d
 ```
 Cela va automatiquement démarrer les services suivants :
 
-MongoDB (port 27017)
+- MongoDB (port 27017)
 
-FIWARE Orion Context Broker (port 1026)
+- FIWARE Orion Context Broker (port 1026)
 
-Apache NiFi (port 8080)
+- Apache NiFi (port 8080)
 
 
 
