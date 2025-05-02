@@ -39,4 +39,90 @@ This project is a simple **Digital Twin simulation of a smart parking lot**. It 
        +---------+
        | MongoDB |
        +---------+
+```
+---
+
+## ⚙️ Setup de l'environnement (Docker Compose)
+
+### 🧾 Prérequis
+
+* [Docker](https://www.docker.com/get-started)
+* [Docker Compose](https://docs.docker.com/compose/)
+
+---
+
+### 📁 Arborescence du projet
+
+```
+.
+├── docker-compose.yml
+└── README.md
+```
+
+---
+
+📄 Fichier docker-compose.yml
+Le fichier docker-compose.yml est déjà fourni dans ce dépôt.
+
+➡️ Il suffit de cloner le projet :
+
+```bash
+
+git clone https://github.com/yosr-ezzeddine/Smart-Parking-Digital-Twin.git
+cd <nom-du-repo>
+```
+
+
+
+---
+
+### ▶️ Lancer les services
+
+Lance les services en exécutant la commande suivante dans le terminal à la racine du projet :
+
+```bash
+docker-compose up -d
+```
+Cela va automatiquement démarrer les services suivants :
+
+MongoDB (port 27017)
+
+FIWARE Orion Context Broker (port 1026)
+
+Apache NiFi (port 8080)
+
+
+
+Pour vérifier que les services sont bien lancés :
+
+```bash
+docker ps
+```
+
+---
+
+### 🌐 Accéder aux interfaces
+
+| Service              | Adresse locale                                                 |
+| -------------------- | -------------------------------------------------------------- |
+| Apache NiFi          | [http://localhost:8080/nifi](http://localhost:8080/nifi)       |
+| Orion Context Broker | [http://localhost:1026/version](http://localhost:1026/version) |
+| MongoDB              | Accessible sur le port `27017` (pas d’interface web)           |
+
+---
+
+### 🧪 Tester Orion
+
+Pour tester si Orion est bien lancé et fonctionnel, utilise la commande suivante :
+
+```bash
+curl http://localhost:1026/version
+```
+
+Tu devrais recevoir une réponse JSON contenant la version d’Orion.
+
+---
+
+
+
 
